@@ -7,6 +7,8 @@ coverage/
 *.js
 !karma.conf.js
 !karma-test-shim.js
+!helpers.js
+!webpack.test.js
 *.map
 *.d.ts
 typings

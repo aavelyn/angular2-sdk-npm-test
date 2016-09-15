@@ -1,1 +1,1 @@
-export * from 'src/angularselfbits'
+export * from './src/angularselfbits'
