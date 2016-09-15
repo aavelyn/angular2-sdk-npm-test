@@ -1,6 +1,6 @@
 {
 	"name": "angular2-sdk-npm-test",
-	"version": "1.0.1",
+	"version": "1.0.4",
 	"description": "",
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",
@@ -10,8 +10,8 @@
 		"type": "git",
 		"url": "git+https://github.com/aavelyn/angular2-sdk-npm-test.git"
 	},
-	"main": "./index.js",
-	"typings":"./index.d.ts",
+	"main": "./dist/index.js",
+	"typings":"./dist/index.d.ts",
 	"author": "Han Che",
 	"license": "MIT",
 	"bugs": {

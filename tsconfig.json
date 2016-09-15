@@ -8,12 +8,22 @@
 		"inlineSources": true,
 		"declaration": true,
 		"moduleResolution": "node",
-//		"outDir": "./dist",
-		"sourceMap": true
+		"sourceMap": true,
+		"outDir": "dist"
 	},
 	"files": [
 		"./typings/index.d.ts",
 		"./index.ts",
-		"./src/service.ts"
+		"./src/angularselfbits.ts",
+		"./src/services/auth.ts",
+		"./src/services/database.ts",
+		"./src/services/device.ts",
+		"./src/services/file.ts",
+		"./src/services/http.ts",
+		"./src/services/index.ts",
+		"./src/services/push.ts",
+		"./src/services/user.ts",
+		"./src/utils/interfaces.ts",
+		"./src/utils/utils.ts"
 	]
 }
