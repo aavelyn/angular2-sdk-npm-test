@@ -2,5 +2,13 @@
 .DS_Store
 .idea
 node_modules/
+tests/
 coverage/
-typings/
+*.js
+!karma.conf.js
+!karma-test-shim.js
+!helpers.js
+!webpack.test.js
+*.map
+*.d.ts
+typings
