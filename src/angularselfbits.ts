@@ -6,6 +6,7 @@ import { SelfbitsAppConfig } from './utils/interfaces';
 
 import { HttpModule } from '@angular/http';
 import {SELFBITS_CONFIG} from "./utils/tokens";
+
 import {SelfbitsAuth} from "./services/auth";
 import {SelfbitsDatabase} from "./services/database";
 import {SelfbitsFile} from "./services/file";
