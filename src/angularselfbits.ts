@@ -1,12 +1,9 @@
 import {NgModule, ModuleWithProviders} from '@angular/core';
 import { Injectable } from '@angular/core';
 
-
 import { SelfbitsAppConfig } from './utils/interfaces';
 
-import { HttpModule } from '@angular/http';
 import {SELFBITS_CONFIG} from "./utils/tokens";
-
 import {SelfbitsAuth} from "./services/auth";
 import {SelfbitsDatabase} from "./services/database";
 import {SelfbitsFile} from "./services/file";
@@ -43,16 +40,14 @@ export const SelfbitsSetup = (appConfig: SelfbitsAppConfig): any => {
 		]
 };
 
-
-
 // RC5+ using ngModule to load providers
 @NgModule({
-	providers:SELFBITS_PROVIDERS,
-	imports:[ HttpModule ]
+	providers:SELFBITS_PROVIDERS
 })
 
 export class SelfbitsAngularModule{
 	static initializeApp(config:SelfbitsAppConfig):ModuleWithProviders{
+
 		return {
 			ngModule:SelfbitsAngularModule,
 			providers:[
@@ -61,3 +56,6 @@ export class SelfbitsAngularModule{
 		}
 	}
 }
+
+export { SelfbitsAppConfig, SelfbitsAuthConfig, SelfbitsHttp } from './utils/interfaces'
+export { SELFBITS_CONFIG } from './utils/tokens'
