@@ -1,5 +1,6 @@
-import {NgModule, ModuleWithProviders} from '@angular/core';
+import {NgModule, ModuleWithProviders, Optional, Inject} from '@angular/core';
 import { Injectable } from '@angular/core';
+import { HttpModule } from '@angular/http';
 
 import { SelfbitsAppConfig } from './utils/interfaces';
 
@@ -14,6 +15,7 @@ import {SelfbitsPush} from "./services/push";
 @Injectable()
 export class SelfbitsAngular {
 	constructor(
+		@Optional() @Inject(SELFBITS_CONFIG) private config:SelfbitsAppConfig,
 		public auth : SelfbitsAuth,
 		public database : SelfbitsDatabase,
 		public file : SelfbitsFile,
@@ -40,13 +42,19 @@ export const SelfbitsSetup = (appConfig: SelfbitsAppConfig): any => {
 		]
 };
 
-// RC5+ using ngModule to load providers
 @NgModule({
-	providers:SELFBITS_PROVIDERS
+	providers:SELFBITS_PROVIDERS,
+	imports:[HttpModule]
 })
 
 export class SelfbitsAngularModule{
-	static initializeApp(config:SelfbitsAppConfig):ModuleWithProviders{
+	static forRoot(config:SelfbitsAppConfig):ModuleWithProviders{
+
+		if(config.BASE_URL.trim().length === 0 || config.APP_ID.trim().length === 0 || config.APP_SECTRET.trim().length === 0) {
+			console.error('-----------------------------------------------------');
+			console.error('SelfbitsAppConfig in root ngModule is NOT configured!');
+			console.error('-----------------------------------------------------');
+		}
 
 		return {
 			ngModule:SelfbitsAngularModule,
