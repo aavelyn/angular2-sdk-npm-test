@@ -4,7 +4,7 @@ import {Response} from "@angular/http";
 export interface SelfbitsAppConfig {
 	BASE_URL: string,
 	APP_ID: string,
-	APP_SECTRET: string
+	APP_SECRET?: string
 }
 
 export interface SelfbitsAuthConfig {
@@ -19,7 +19,6 @@ export interface SelfbitsHttp{
 	put(data:any, id:string):Observable<Response>,
 	delete(id:string):Observable<Response>
 }
-
 
 export interface SbAuthSucessResponse {
 	token:string,
